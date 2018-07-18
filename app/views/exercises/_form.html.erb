@@ -1,0 +1,22 @@
+<div id="ex-form">
+<%= form_for [@plan, @exercise] do |f| %>
+    <%= f.label :body_part, 'Body Part' %>
+    <%= f.collection_select :body_part, Exercise::BODY_PARTS, :to_s, :to_s, {include_blank:false} %>
+    <br>
+    <%= f.label :name, 'Name of Exercise' %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :weight %>
+    <%= f.text_field :weight %>
+    <br>
+    <%= f.label :reps %>
+    <%= f.text_field :reps %>
+    <br>
+    <%= f.label :sets %>
+    <%= f.text_field :sets %>
+    <br>
+    <%= f.submit 'Submit' %>
+<% end %>
+
+<%= link_to "Back To Plans", plan_path(@plan) %>
+</div>

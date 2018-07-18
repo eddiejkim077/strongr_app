@@ -5,6 +5,24 @@ def new
 @exercise = Exercise.new(plan_id: @plan.id)
 end
 
+def edit
+    @exercise = Exercise.find(params[:id])
+    @plan = @exercise.plan
+    # @plan = Plan.find(params[:plan_id])
+    # @exercise = Exercise.new(plan_id: @plan.id)
+
+end
+
+def update
+    @plan = Plan.find(params[:plan_id])
+    @exercise = Exercise.find(params[:id])
+    if @exercise.update(exercise_params)
+        redirect_to plan_path(@plan.id)
+    else
+        render :edit 
+    end
+end
+
 def create
     @plan = Plan.find(params[:plan_id])
     @exercise = Exercise.new(exercise_params)
@@ -20,9 +38,14 @@ def create
     end
 end
 
-def exercise_params
-    params.require(:exercise).permit(:name, :body_part, :set, :reps, :weight)
-end
+    def destroy
+        Exercise.find(params[:id]).destroy
+        redirect_to request.env["HTTP_REFERER"]
+    end
+    private
+    def exercise_params
+        params.require(:exercise).permit(:name, :body_part, :sets, :reps, :weight)
+    end
 end
 
 # def show

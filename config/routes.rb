@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
 
   resources :plans do
-    resources :exercises, shallow: true
+    resources :exercises#, shallow: true
   end
 
   patch '/toggle_day/:plan_id/:day_idx', to: 'plans#toggle', as: 'toggle_day' 

@@ -1,12 +1,11 @@
 class PlansController < ApplicationController
+    def index
+        @plans = current_user.plans
+    end
     
     def show
         @plan = Plan.find(params[:id])
-        @exercises = @plan.exercises
-    end
-
-    def index
-        @plans = current_user.plans
+        @exercises = @plan.exercises.order(:created_at)
     end
 
     def new
@@ -30,6 +29,13 @@ class PlansController < ApplicationController
         @plan.save
         redirect_to plan_path(@plan)
     end
+
+    def destroy
+        plan = Plan.find(params[:id])
+        plan.destroy
+        redirect_to plans_path
+    end
+
 
     private
     def plan_params

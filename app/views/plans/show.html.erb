@@ -1,4 +1,4 @@
-<h1><%= @plan.name %></h1>
+<h1><%= @plan.name %> Schedule</h1>
 <div id="days_table">
 <table>
     <tr>
@@ -23,15 +23,43 @@
     </tr>
 </table>
 </div>
-<ul>
-<% @exercises.each do |exercise| %>
-<li>
-<%= exercise.name %>
-</li>
-<% end %>
 
-
+    <div id="plan-btn">
     <%= link_to "Add Exercise", new_plan_exercise_path(@plan), class: 'btn btn-success' %>
-
-<br>
     <%= link_to "Back To Plans", plans_path, class: 'btn btn-success' %>
+    </div>
+
+ <% if @exercises.length > 0 %>    
+<h1 id="plan-exercises"> <%= @plan.name %> Exercises </h1>
+    <table id="exercise-table">
+    <thead>
+        <span>
+        <tr>
+            <th>Body Part</th>
+            <th>Exercise Name</th>
+            <th>Weight</th>
+            <th>Reps</th> 
+            <th>Sets</th>
+            <th colspan="2"></th>
+        </tr>
+        </span>
+    </thead>
+
+        <tbody>
+            <% @exercises.each do |exercise| %>
+            <tr>
+                <td><%= exercise.body_part %></td>
+                <td><%= exercise.name %></td>
+                <td><%= exercise.weight %></td>
+                <td><%= exercise.reps %></td>
+                <td><%= exercise.sets %></td>
+                <td><%= link_to 'Edit', edit_plan_exercise_path(@plan, exercise), class: 'btn btn-primary' %></td>
+                <td><%= link_to 'Delete', plan_exercise_path(@plan, exercise.id), method: :delete, class: 'btn btn-danger' %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+<% end %>    
+
+<%= link_to 'Delete Plan', plan_path(id: @plan.id), method: :delete, class: 'btn btn-danger' %>
+

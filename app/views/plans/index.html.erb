@@ -1,7 +1,7 @@
 <h1>Plan Your Workouts</h1>
 
 <div id="exist_plans">
-<h3>Your Existing Plans</h3>
+<h3 id="plan-show-h">Your Existing Plans</h3>
 <% @plans.each do |plan| %>
     <p><%= link_to plan.name, plan_path(plan) %></p>
 <% end %>

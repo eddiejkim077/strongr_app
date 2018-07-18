@@ -14,17 +14,56 @@
  *= require_self
  */
 
+ body{
+     font-family: 'Roboto'
+ }
  h1 {
     text-align: center;
  }
 
- td {
-     border: 1px solid black;
+ th{
+     text-align: center;
+ }
+ .btn-sm {
+    border-radius: 6px;
+    height: 28px;
+ }
+ #new-plan {
+     text-align: center;
+     padding-top: 25px;
 }
+#new-plan-btn{
+    display: inline;
+}
+
+#plan-show-h{
+    padding-top: 70px;
+
+}
+#plan-btn{
+    text-align: center;
+    padding-top: 70px;
+}
+
+#ex-form{
+    text-align: center;
+}
+
 table{
     border-collapse: collapse;
     table-layout: fixed;
     width: 900px;
+ }
+
+ #plan-exercises{
+    padding-top: 65px;
+ }
+
+ #exercise-table {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
+
  }
 
  #new-plan-btn{
@@ -41,7 +80,6 @@ table{
     justify-content: center;
     padding-top: 60px;
  }
-
 
  #nav_bar {
      text-align: left;

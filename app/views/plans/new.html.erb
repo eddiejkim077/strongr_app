@@ -1,9 +1,9 @@
-<h1>Add New Plan</h1>
-<%= form_for @plan do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <br>
-    <%= f.submit 'Submit' %>
-<% end %>
+<h1>New Plan</h1>
 
-    <%= link_to "Back To Plans", plans_path, class: 'btn btn-success' %>
+<div id="new-plan">
+<%= form_for @plan do |f| %>
+    <%= f.text_field :name, placeholder: 'Plan Name' %>
+    <%= f.submit 'Submit', class: 'btn btn-success btn-sm' %>
+<% end %>
+</div>  
+    <%= link_to "Back To Plans", plans_path, class: 'btn btn-info' %>

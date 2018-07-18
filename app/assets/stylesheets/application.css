@@ -15,16 +15,44 @@
  */
 
  h1 {
-     text-align: center;
+    text-align: center;
  }
+
+ td {
+     border: 1px solid black;
+}
+table{
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 900px;
+ }
+
+ #new-plan-btn{
+     text-align: right;
+ }
+
+#exist_plans{
+    text-align: center;
+}
+
+ #days_table {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+ }
+
 
  #nav_bar {
      text-align: left;
      padding-top: 20px;
-     margin-left: 90px;
+     margin-left: 90px; 
+     color:inherit;
  }
 
-
+#nav_bar_color {
+    background: white;
+}
 .login-form {
     align-items: center;
     display: flex;

@@ -1,0 +1,37 @@
+<h1><%= @plan.name %></h1>
+<div id="days_table">
+<table>
+    <tr>
+        <td></td>
+        <td>Mon</td>
+        <td>Tue</td>
+        <td>Wed</td>
+        <td>Thu</td>
+        <td>Fri</td>
+        <td>Sat</td>
+        <td>Sun</td>
+    </tr>
+    <tr>
+        <td><%= @plan.name %></td>
+        <td><%= link_to (@plan.mon ? '✓' : 'Select'), toggle_day_path(@plan, 0), method: :patch %></td>
+        <td><%= link_to (@plan.tue ? '✓' : 'Select'), toggle_day_path(@plan, 1), method: :patch %></td>
+        <td><%= link_to (@plan.wed ? '✓' : 'Select'), toggle_day_path(@plan, 2), method: :patch %></td>
+        <td><%= link_to (@plan.thu ? '✓' : 'Select'), toggle_day_path(@plan, 3), method: :patch %></td>
+        <td><%= link_to (@plan.fri ? '✓' : 'Select'), toggle_day_path(@plan, 4), method: :patch %></td>
+        <td><%= link_to (@plan.sat ? '✓' : 'Select'), toggle_day_path(@plan, 5), method: :patch %></td>
+        <td><%= link_to (@plan.sun ? '✓' : 'Select'), toggle_day_path(@plan, 6), method: :patch %></td>
+    </tr>
+</table>
+</div>
+<ul>
+<% @exercises.each do |exercise| %>
+<li>
+<%= exercise.name %>
+</li>
+<% end %>
+
+
+    <%= link_to "Add Exercise", new_plan_exercise_path(@plan), class: 'btn btn-success' %>
+
+<br>
+    <%= link_to "Back To Plans", plans_path, class: 'btn btn-success' %>

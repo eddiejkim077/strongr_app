@@ -10,10 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_14_170115) do
+ActiveRecord::Schema.define(version: 2018_07_16_173944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "exercises", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.integer "weight"
+    t.integer "reps"
+    t.integer "sets"
+    t.string "body_part"
+    t.boolean "completed"
+    t.bigint "plan_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plan_id"], name: "index_exercises_on_plan_id"
+    t.index ["user_id"], name: "index_exercises_on_user_id"
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.bigint "user_id"
+    t.boolean "mon"
+    t.boolean "tue"
+    t.boolean "wed"
+    t.boolean "thu"
+    t.boolean "fri"
+    t.boolean "sat"
+    t.boolean "sun"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_plans_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -23,4 +53,7 @@ ActiveRecord::Schema.define(version: 2018_07_14_170115) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "exercises", "plans"
+  add_foreign_key "exercises", "users"
+  add_foreign_key "plans", "users"
 end

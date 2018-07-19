@@ -13,25 +13,34 @@
  *= require_tree .
  *= require_self
  */
+* {
+    margin: 0;
+    padding: 0;
+}
 
- body{
+
+body{
      font-family: 'Roboto'
- }
- h1 {
-    text-align: center;
- }
+}
 
- th{
+h1 {
+    text-align: center;
+}
+
+th{
      text-align: center;
- }
- .btn-sm {
+}
+
+.btn-sm {
     border-radius: 6px;
     height: 28px;
- }
+}
+
  #new-plan {
      text-align: center;
      padding-top: 25px;
 }
+
 #new-plan-btn{
     display: inline;
 }
@@ -40,6 +49,7 @@
     padding-top: 70px;
 
 }
+
 #plan-btn{
     text-align: center;
     padding-top: 70px;
@@ -53,45 +63,47 @@ table{
     border-collapse: collapse;
     table-layout: fixed;
     width: 900px;
- }
+}
 
- #plan-exercises{
+#plan-exercises{
     padding-top: 20px;
- }
+}
 
-
- #exercise-table {
+#exercise-table {
     text-align: center;
     margin: 0 auto;
     margin-top: 25px;
 
- }
+}
 
- #new-plan-btn{
+#new-plan-btn{
      text-align: right;
- }
+}
 
 #exist_plans{
     text-align: center;
 }
 
- #days_table {
+#days_table {
     text-align: center;
     display: flex;
     justify-content: center;
-    padding-top: 60px;
- }
-
- #nav_bar {
-     text-align: left;
-     padding-top: 20px;
-     margin-left: 90px; 
-     color:inherit;
- }
-
-#nav_bar_color {
-    background: white;
+    padding-top: 15px;
 }
+
+#nav_bar {
+     text-align: left;
+     padding-top: 9px;
+     margin-left: 90px; 
+     color: white;
+     
+}
+
+#nav-bar-color {
+    background: rgb(73,167,212, 0.8);
+    height: 40px;
+}
+
 .login-form {
     align-items: center;
     display: flex;
@@ -126,3 +138,40 @@ table{
     text-align: center;
     color: red;
 }
+
+#landing-box{
+    width: 300px;
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    margin: 0 auto;
+    margin-top: -700px;
+    border-radius: 20px;
+    font-size: 25px;
+    margin-left: 200px;
+}
+
+#landing-pic{
+    width: 1680px;
+    max-height: 100vh;
+    margin: auto;
+}
+
+#landing-pic-div{
+    display: grid;
+    height: 100%;
+}
+
+.login-btn{
+    color: white;
+}
+
+#plan-del-btn{
+    margin-right: 744px;
+    margin-top: 50px;
+}
+
+a:hover{
+    text-decoration: none;
+}
+

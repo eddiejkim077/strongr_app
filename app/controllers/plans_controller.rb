@@ -1,4 +1,5 @@
 class PlansController < ApplicationController
+    before_action :authorize
     def index
         @plans = current_user.plans
     end
@@ -30,6 +31,10 @@ class PlansController < ApplicationController
         redirect_to plan_path(@plan)
     end
 
+    def edit
+
+        
+    end
     def destroy
         plan = Plan.find(params[:id])
         plan.destroy

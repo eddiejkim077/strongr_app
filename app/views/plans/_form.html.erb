@@ -1,0 +1,6 @@
+<div id="new-plan">
+<%= form_for @plan do |f| %>
+    <%= f.text_field :name, placeholder: 'Plan Name' %>
+    <%= f.submit 'Submit', class: 'btn btn-success btn-sm' %>
+<% end %>
+</div>  

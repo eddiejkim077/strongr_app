@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 * {
     margin: 0;
     padding: 0;
@@ -29,6 +30,11 @@ h1 {
 
 th{
      text-align: center;
+     font-size: 18px;
+}
+
+td{
+    padding-top: 10px;
 }
 
 .btn-sm {
@@ -36,27 +42,14 @@ th{
     height: 28px;
 }
 
- #new-plan {
+#new-plan {
      text-align: center;
      padding-top: 25px;
 }
 
-#new-plan-btn{
-    display: inline;
-}
-
-#plan-show-h{
-    padding-top: 70px;
-
-}
-
 #plan-btn{
     text-align: center;
-    padding-top: 70px;
-}
-
-#ex-form{
-    text-align: center;
+    padding-top: 55px;
 }
 
 table{
@@ -67,21 +60,24 @@ table{
 
 #plan-exercises{
     padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 #exercise-table {
     text-align: center;
     margin: 0 auto;
     margin-top: 25px;
-
 }
 
-#new-plan-btn{
-     text-align: right;
-}
-
-#exist_plans{
+#exist-plans{
     text-align: center;
+    border: 1px solid black;
+    position: relative;
+    margin-top: 2px;
+    width: 235px;
+    border-radius: 15px;
+    margin: 0 auto;
+    background-color: rgb(201, 209, 221, 0.3);
 }
 
 #days_table {
@@ -96,7 +92,6 @@ table{
      padding-top: 9px;
      margin-left: 90px; 
      color: white;
-     
 }
 
 #nav-bar-color {
@@ -118,7 +113,6 @@ table{
 #signup-btn {
     padding-top: 20px;
     padding-left: 53px;
-
 }
 
 #notice {
@@ -167,11 +161,84 @@ table{
 }
 
 #plan-del-btn{
-    margin-right: 744px;
     margin-top: 50px;
+    margin-left: 1166px;
 }
 
 a:hover{
     text-decoration: none;
 }
 
+#login-page{
+    background-position: fill;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.my-btn{
+    background-color: #6D747C;
+    color: white;
+}
+
+#login-div{
+    padding-top: 100px;
+}
+
+#login-text{
+    padding-bottom: 30px;
+}
+
+#edit-name-btn{
+    display: inline;
+    font-size: 20px;
+}
+
+#new-plan-btn{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px; 
+}
+
+#back-btn{
+    margin-left: 225px;
+    padding-top: 46px;
+    display: flex;
+    justify-content: center;
+}
+
+#sign-up{
+    padding-top: 100px;
+}
+
+#sign-h{
+    padding-bottom: 22px;
+}
+
+.plan-show-idx{
+    font-family: 'PT Sans Caption', sans-serif;
+}
+
+#ex-form{
+    display: flex;
+    justify-content: center;
+}
+
+#plan-h{
+    padding-bottom: 20px;
+    font-family: 'PT Sans Caption', sans-serif;
+}
+
+.check{
+    font-size: 30px;
+}
+
+.ex-box{
+    font-size: 15px;
+}
+
+#plans-back-btn{
+    margin-left: 200px;
+    padding-top: 46px;
+    display: flex;
+    justify-content: center;
+}

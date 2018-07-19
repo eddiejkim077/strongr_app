@@ -1,16 +1,13 @@
 class ExercisesController < ApplicationController
 
 def new
-@plan = Plan.find(params[:plan_id])
-@exercise = Exercise.new(plan_id: @plan.id)
+    @plan = Plan.find(params[:plan_id])
+    @exercise = Exercise.new(plan_id: @plan.id)
 end
 
 def edit
     @exercise = Exercise.find(params[:id])
     @plan = @exercise.plan
-    # @plan = Plan.find(params[:plan_id])
-    # @exercise = Exercise.new(plan_id: @plan.id)
-
 end
 
 def update

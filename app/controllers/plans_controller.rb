@@ -1,7 +1,7 @@
 class PlansController < ApplicationController
     before_action :authorize
     def index
-        @plans = current_user.plans
+        @plans = current_user.plans.order(:created_at)
     end
     
     def show
@@ -32,9 +32,19 @@ class PlansController < ApplicationController
     end
 
     def edit
-
+        @plan = Plan.find(params[:id])
         
     end
+
+    def update
+        @plan = Plan.find(params[:id])
+        if @plan.update(plan_params)
+            redirect_to plan_path(@plan)
+        else
+            render :edit 
+        end
+    end
+
     def destroy
         plan = Plan.find(params[:id])
         plan.destroy

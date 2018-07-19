@@ -1,65 +1,67 @@
-<h1><%= @plan.name %> Schedule</h1>
+<h1 class="plan-show-idx"> <%= @plan.name %>
+    <%= link_to 'Edit Name', edit_plan_path(@plan), id: "edit-name-btn", class: "btn btn-success" %>
+</h1>
 <div id="days_table">
 <table>
     <tr>
-        <td></td>
-        <td>Mon</td>
-        <td>Tue</td>
-        <td>Wed</td>
-        <td>Thu</td>
-        <td>Fri</td>
-        <td>Sat</td>
-        <td>Sun</td>
+        <th></th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+        <th>Sun</th>
     </tr>
     <tr>
-        <td><%= @plan.name %></td>
-        <td><%= link_to (@plan.mon ? '✓' : 'Select'), toggle_day_path(@plan, 0), method: :patch %></td>
-        <td><%= link_to (@plan.tue ? '✓' : 'Select'), toggle_day_path(@plan, 1), method: :patch %></td>
-        <td><%= link_to (@plan.wed ? '✓' : 'Select'), toggle_day_path(@plan, 2), method: :patch %></td>
-        <td><%= link_to (@plan.thu ? '✓' : 'Select'), toggle_day_path(@plan, 3), method: :patch %></td>
-        <td><%= link_to (@plan.fri ? '✓' : 'Select'), toggle_day_path(@plan, 4), method: :patch %></td>
-        <td><%= link_to (@plan.sat ? '✓' : 'Select'), toggle_day_path(@plan, 5), method: :patch %></td>
-        <td><%= link_to (@plan.sun ? '✓' : 'Select'), toggle_day_path(@plan, 6), method: :patch %></td>
+        <th><%= @plan.name %></th>
+        <td class="check"><%= link_to (@plan.mon ? '✔️' : '🗓'), toggle_day_path(@plan, 0), method: :patch %></td>
+        <td class="check"><%= link_to (@plan.tue ? '✔️' : '🗓'), toggle_day_path(@plan, 1), method: :patch %></td>
+        <td class="check"><%= link_to (@plan.wed ? '✔️' : '🗓'), toggle_day_path(@plan, 2), method: :patch %></td>
+        <td class="check"><%= link_to (@plan.thu ? '✔️' : '🗓'), toggle_day_path(@plan, 3), method: :patch %></td>
+        <td class="check"><%= link_to (@plan.fri ? '✔️' : '🗓'), toggle_day_path(@plan, 4), method: :patch %></td>
+        <td class="check"><%= link_to (@plan.sat ? '✔️' : '🗓'), toggle_day_path(@plan, 5), method: :patch %></td>
+        <td class="check"><%= link_to (@plan.sun ? '✔️' : '🗓'), toggle_day_path(@plan, 6), method: :patch %></td>
     </tr>
 </table>
 </div>
-    <section id="plan-btn"
-        <div id="left">
+        <div id="plan-btn">
             <%= link_to "Add Exercise", new_plan_exercise_path(@plan), class: 'btn btn-success' %>
-            <%= link_to "Back To Plans", plans_path, class: 'btn btn-seconday' %>
+            <%= link_to "Back To Plans", plans_path, class: 'btn btn-default my-btn' %>
         </div>
 
- <% if @exercises.length > 0 %>    
-<h1 id="plan-exercises"> <%= @plan.name %> Exercises </h1>
-    <table id="exercise-table">
-    <thead>
-        <span>
-        <tr>
-            <th>Body Part</th>
-            <th>Exercise Name</th>
-            <th>Weight</th>
-            <th>Reps</th> 
-            <th>Sets</th>
-            <th colspan="2"></th>
-        </tr>
-        </span>
-    </thead>
-
-        <tbody>
-            <% @exercises.each do |exercise| %>
+<% if @exercises.length > 0 %>    
+    <h1 class="plan-show-idx" id="plan-exercises"> <%= @plan.name %> Exercises </h1>
+        <table id="exercise-table">
+        <thead>
+            <span>
             <tr>
-                <td><%= exercise.body_part %></td>
-                <td><%= exercise.name %></td>
-                <td><%= exercise.weight %></td>
-                <td><%= exercise.reps %></td>
-                <td><%= exercise.sets %></td>
-                <td><%= link_to 'Edit', edit_plan_exercise_path(@plan, exercise), class: 'btn btn-primary' %></td>
-                <td><%= link_to 'Delete', plan_exercise_path(@plan, exercise.id), method: :delete, class: 'btn btn-danger' %></td>
+                <th>Body Part</th>
+                <th>Exercise Name</th>
+                <th>Weight</th>
+                <th>Reps</th> 
+                <th>Sets</th>
+                <th colspan="2"></th>
             </tr>
-            <% end %>
-        </tbody>
-    </table>
-<% end %>    
-<%#= link_to 'Edit Name', edit_plan(plan) %>
+            </span>
+        </thead>
 
-<%= link_to 'Delete Plan', plan_path(id: @plan.id), method: :delete, data: {confirm: 'Are you sure you want to delete this plan?'}, class: 'btn btn-danger', id: 'plan-del-btn' %>
+            <tbody>
+                <% @exercises.each do |exercise| %>
+                <tr>
+                    <td class="ex-box"><%= exercise.body_part %></td>
+                    <td class="ex-box"><%= exercise.name %></td>
+                    <td class="ex-box"><%= exercise.weight %></td>
+                    <td class="ex-box"><%= exercise.reps %></td>
+                    <td class="ex-box"><%= exercise.sets %></td>
+                    <td class="ex-box"><%= link_to 'Edit', edit_plan_exercise_path(@plan, exercise), class: 'btn btn-primary' %></td>
+                    <td class="ex-box"><%= link_to 'Delete', plan_exercise_path(@plan, exercise.id), method: :delete, class: 'btn btn-danger' %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+<% end %>    
+
+<div id="plan-del-btn">
+    <%= link_to 'Delete Plan', plan_path(id: @plan.id), method: :delete, data: {confirm: 'Are you sure you want to delete this plan?'}, class: 'btn btn-danger' %>
+</div>

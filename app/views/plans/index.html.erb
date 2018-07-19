@@ -1,10 +1,13 @@
-<h1>Plan Your Workouts</h1>
-
-<div id="exist_plans">
-    <h3 id="plan-show-h">Your Existing Plans</h3>
-    <% @plans.each do |plan| %>
-        <p><%= link_to plan.name, plan_path(plan) %></p>
-    <% end %>
-    <br>
-</div>
-<%= link_to 'New Plan Name', new_plan_path, id: 'new-plan-btn' %>
+<body id="plan-idx">
+    <h1 id="plan-h">Plan Your Workouts</h1>
+    <div id="exist-plans">
+        <h3 id="plan-show-h">Your Existing Plans</h3>
+            <% @plans.each do |plan| %>
+                <p><%= link_to plan.name, plan_path(plan) %></p>
+            <% end %>
+        <br>
+    </div>
+    <div id="new-plan-btn">
+        <%= link_to 'New Plan', new_plan_path, class: 'btn btn-success' %>
+    </div>
+</body>

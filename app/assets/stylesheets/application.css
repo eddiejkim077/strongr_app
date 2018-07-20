@@ -107,12 +107,12 @@ table{
 
 #login-btn {
     padding-top: 20px;
-    padding-left: 82px;
+    padding-left: 106px;
 }
 
 #signup-btn {
     padding-top: 20px;
-    padding-left: 53px;
+    padding-left: 71px;
 }
 
 #notice {
@@ -200,7 +200,6 @@ a:hover{
 }
 
 #back-btn{
-    margin-left: 225px;
     padding-top: 46px;
     display: flex;
     justify-content: center;
@@ -241,4 +240,7 @@ a:hover{
     padding-top: 46px;
     display: flex;
     justify-content: center;
+}
+#ex-form-btn{
+    margin-left: 101px;
 }

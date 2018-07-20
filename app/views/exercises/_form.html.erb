@@ -7,25 +7,25 @@
         <br>
         <%= f.label :name, 'Name of Exercise' %>
         <br>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, class: "form-control" %>
         <br>
         <%= f.label :weight %>
         <br>
-        <%= f.text_field :weight %>
+        <%= f.text_field :weight, class: "form-control" %>
         <br>
         <%= f.label :reps %>
         <br>
-        <%= f.text_field :reps %>
+        <%= f.text_field :reps, class: "form-control" %>
         <br>
         <%= f.label :sets %>
         <br>
-        <%= f.text_field :sets %>
+        <%= f.text_field :sets, class: "form-control" %>
         <br>
         <br>
-        <%= f.submit 'Submit' %>
+        <%= f.submit "Submit", class: "btn btn-success", id: "ex-form-btn" %>
     <% end %>
-
 </div>
+
 <div id="plans-back-btn">
     <%= link_to "Back To Plan", plan_path(@plan), class: 'btn btn-default my-btn' %>
 </div>

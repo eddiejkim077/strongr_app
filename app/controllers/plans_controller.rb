@@ -1,5 +1,6 @@
 class PlansController < ApplicationController
     before_action :authorize
+    
     def index
         @plans = current_user.plans.order(:created_at)
     end

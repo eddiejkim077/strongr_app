@@ -1,24 +1,30 @@
-# README
+# Strongr APP
+--
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Overview
+The strongr app helps users simply log their workouts. Users are able to assign certain plans to the days they want to workout. Also users are able to add or edit their custom exercises. 
 
-Things you may want to cover:
 
-* Ruby version
+### Screenshot
+![Alt text](https://i.imgur.com/icKpjLr.png)
 
-* System dependencies
+### Technologies Used
++ Ruby 
++ Rails
++ Bootstrap 3.3.7
++ Emojis
++ Unsplash Image
 
-* Configuration
+### Getting Started
 
-* Database creation
++ [Strongr APP](https://strongrdb.herokuapp.com/)
++ [Trello Board](https://trello.com/b/su0myvnl/strongr-app)
 
-* Database initialization
+### Unsolved Problem
++ Back to plans button in edit plan page doest not go back to plan page. 
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Ice Box
++ Have users track finished work outs
++ Have a comment feature 
++ Have common exercises already in database for users to chose from
++ Have a better looking UI 
